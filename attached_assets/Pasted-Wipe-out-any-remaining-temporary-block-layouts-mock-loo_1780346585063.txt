@@ -1,0 +1,29 @@
+Wipe out any remaining temporary block layouts, mock loop structures, or placeholder shape alternatives entirely. We are deploying the absolute final, production-ready synchronized update for the Emergency & Crowd Management Digital Twin Dashboard. 
+
+Every single component must now read directly from our real verified assets and true coordinates:
+
+1. Real 3D Viewport Overhaul (React Three Fiber):
+- Completely remove the fake blue placeholder cube and the "المبنى الرئيسي" text overlay.
+- Force the scene to render our real Revit-exported model loaded directly via: `useGLTF('/models/college_model.glb')`.
+- Make sure the model is centered and visible on screen by mapping it inside a container with correct scaling setup: `<primitive object={gltf.scene} scale={[1, 1, 1]} position={[0, 0, 0]} />` (Adjust bounds if it's off-screen).
+- Apply a high-end matte engineering clay material (Color: '#cbd5e1', roughness: 0.5, metalness: 0.1) to all architectural children meshes.
+- Attach an interactive onClick pointer event to the meshes. Clicking a hall mesh must prevent propagation and instantly sync with the sidebar active state.
+
+2. Premium Decision Support Intelligence Card (Arabic UI):
+- Ensure the right sidebar dynamic card is fully operational in Arabic and completely tied to the 3D clicks.
+- When an asset ('modraj_1' to 'modraj_4' or 'medical_1' to 'medical_4') becomes active, the card must render:
+  * Proper Arabic Title (e.g., "مدرج 1" or "ميدكال 3").
+  * Real Image Component reading our clean .png file strictly from the path: src={`/images/${activeRoom}.png`}.
+  * Live Telemetry Dashboard Indicators: Student Count, Occupancy Percentage, and Live Room Temperature.
+  * DSS Evacuation Guidelines Box: Dynamic Arabic emergency instructions based on the room's live crowding state.
+
+3. Fixed Real-World 2D GIS Map (Faculty of Computers & Information, Zagazig University):
+- Keep the Leaflet map container locked strictly on the genuine university coordinates: Center: [30.5876, 31.4828], Zoom: 18.
+- Plot a solid Red Marker at [30.5876, 31.4828] for the building.
+- Draw a translucent 50-meter Emergency Buffer Zone circle around it.
+- Draw a solid green polyline evacuation path leading directly from the building marker to the safe open campus yard (ساحة التجمع الآمنة بجامعة الزقازيق) at coordinates: [30.5882, 31.4825].
+
+4. Backend Route Sync:
+- Maintain full bridge synchronization with the Laravel Controller API endpoint `/api/campus/halls` so that all 8 rooms feed data dynamically to the frontend states.
+
+Refactor and execute this clean architecture bundle now. Eliminate all fallback code alternatives to finalize the project presentation.

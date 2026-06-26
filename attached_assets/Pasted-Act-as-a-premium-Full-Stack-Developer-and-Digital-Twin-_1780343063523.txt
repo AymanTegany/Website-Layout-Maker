@@ -1,0 +1,33 @@
+Act as a premium Full-Stack Developer and Digital Twin expert. We are launching the final synchronized update for our Emergency, Safety & Crowd Management Digital Twin Dashboard on Replit. 
+
+Project Status & Assets Ready:
+- 3D Building Model: Already uploaded at "/public/models/college_model.glb".
+- 8 Lecture Hall Static Images: Already uploaded inside "/public/images/" named exactly: modraj_1.jpg, modraj_2.jpg, modraj_3.jpg, modraj_4.jpg, medical_1.jpg, medical_2.jpg, medical_3.jpg, medical_4.jpg.
+
+Please apply the complete code overhaul for React (Frontend) and Laravel (Backend) ensuring 100% realism and zero broken links:
+
+1. High-Realism UI Layout (Tailwind CSS):
+- Create a production-grade UI with a dark slate sleek background (`#0f172a` / `#1e293b`).
+- Layout must feature: Left/Right floating Sidebar for Decision Support Intelligence, Main Center View for the 3D Canvas, and Bottom-Right Widget for the 2D GIS Live Map.
+
+2. Interactive 3D WebGL Layer (React Three Fiber):
+- Load the "/public/models/college_model.glb" architecture. Apply a highly professional matte "Clay Render" material (Color: `#d8dcc4`, roughness: 0.5, metalness: 0.1) so the structure and arches look like a clean engineering blueprint.
+- Implement precise pointer events (`onClick` and `onPointerOver`). When a user clicks a room mesh, normalize the string using `.toLowerCase().trim()` to eliminate any case-sensitivity bugs.
+- Match the clicked mesh to one of our 8 target halls: (modraj_1, modraj_2, modraj_3, modraj_4, medical_1, medical_2, medical_3, medical_4).
+- The selected room mesh must dynamically glow with a transparent emissive overlay (Vivid Red `#ef4444` if status is alert/crowded, and Cyber Green `#22c55e` if stable, opacity: 0.65) while keeping the rest of the building clay gray.
+
+3. Bulletproof Decision Context Card (Arabic UI):
+- When a room is active, the sidebar must display real-time telemetry in clear Arabic:
+  * Hall Name (e.g., "مدرج 1" or "ميدكال 3")
+  * AI Dynamic Analytics: Student Count (عدد الطلاب الحالي), Temperature (درجة الحرارة), and Occupancy Status.
+  * Real Image Display: Render the image via `<img src={`/images/${activeRoom}.jpg`} onError={(e)=>{e.target.src='/images/default.jpg'}} className="w-full h-48 object-cover rounded-xl border border-slate-700 shadow-lg" />` to guarantee it maps perfectly.
+  * DSS Evacuation Guidelines Box: Show smart context-aware emergency instructions (نظام دعم اتخاذ القرار لإخلاء الحشود).
+
+4. Real-World GIS Spatial Evacuation Layer:
+- Render a 2D Leaflet/Mapbox map centered around Egypt spatial coordinates.
+- When an active room is clicked or goes into alert, the GIS map must draw a functional 50-meter "Safe Buffer Zone" radius around the building's specific emergency exits and trace a prominent polyline path leading to the external "Emergency Assembly Point" (نقطة التجمع الآمنة خارج المبنى).
+
+5. Clean Laravel Route & Controller:
+- Provide the full Laravel controller API endpoint (`/api/campus/halls`) that serves this 8-hall JSON structure (including occupancy thresholds, safety stats, and routing coordinates) so the frontend updates dynamically without hardcoded delays.
+
+Generate the full, un-truncated file code ready to deploy and run instantly on Replit.

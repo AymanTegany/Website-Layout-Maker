@@ -1,0 +1,1 @@
+- [Lucide Map icon shadows built-in Map](lucide-map-shadow.md) — import { Map as MapIcon } to avoid shadowing JS global Map<K,V>

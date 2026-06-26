@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "DTuin Faculty Hub"
+version = "1.0.0"
+id = "artifacts/dtuin-hub"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22148
+
+[services.development]
+run = "pnpm --filter @workspace/dtuin-hub run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dtuin-hub", "run", "build" ]
+publicDir = "artifacts/dtuin-hub/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22148"
+BASE_PATH = "/"

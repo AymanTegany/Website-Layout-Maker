@@ -1,0 +1,32 @@
+Wipe out any previous temporary fallback block structures. We are implementing a fully production-grade, interactive 3D Raycasting behavior for our Revit-exported model to function exactly like an enterprise-level Digital Twin dashboard.
+
+Here is the setup configuration:
+1. Model Path: '/models/college_model.glb' (Verified GLB asset).
+2. Image Extensions: Static images inside '/images/' are named exactly with .png extension: modraj_1.png to modraj_4.png and medical_1.png to medical_4.png.
+
+Strict Interactivity & Architecture Requirements:
+
+1. Dynamic 3D Raycasting & Mesh Selection (R3F):
+- Load the true architectural model using `useGLTF('/models/college_model.glb')`.
+- Traverse all children meshes inside the GLB. Since the meshes have native exported names from Revit, write a flexible name-mapping look-up dictionary or context filter to link them directly to our 8 core lecture halls ('modraj_1' to 'modraj_4' and 'medical_1' to 'medical_4').
+- Implement an absolute pointer click handler (onClick) on the mesh objects. When a user clicks a specific lecture hall mesh area in the 3D view:
+  * Prevent event propagation (e.g., call e.stopPropagation()).
+  * Set this hall as the global Active Selection state.
+  * Dynamically apply a highlight color overlay on that specific mesh based on its live status fetched from Laravel (Red for active emergency alert, Orange for high crowd warning, Green for normal/stable). Maintain a clean clay matte finish on the rest of the building architecture.
+
+2. Comprehensive Decision Support Intelligence Card (Arabic UI):
+- The right sidebar dashboard panel must dynamically react to the 3D scene clicks.
+- When a hall is selected via 3D click or the interactive sidebar list, update the layout to show:
+  * Clear Arabic Hall Name header (e.g., "مدرج 1" or "ميدكال 4").
+  * Genuine Image view component rendering src={`/images/${activeRoom}.png`} natively with zero broken links.
+  * Live Telemetry KPIs: Student Density Counter, Live Temperature (°C), and Capacity Threshold status.
+  * Dynamic DSS Evacuation Guidance (نظام دعم اتخاذ القرار): Render context-aware Arabic emergency instructions tailored to the selected room's warning state.
+
+3. Complete 2D GIS Map Coordinates Alignment (Zagazig University):
+- Update the 2D Leaflet map container to render the true geographical coordinates of the Faculty of Computers and Information, Zagazig University, Egypt: Center: [30.5876, 31.4828], Default Zoom: 18.
+- Render a pulsing Red Marker at [30.5876, 31.4828], draw a 50m safety radius overlay, and a solid green polyline path indicating the evacuation route directly to the open campus assembly ground at [30.5882, 31.4825].
+
+4. Backend Integration:
+- Map these interactions directly to the Laravel backend endpoint `/api/campus/halls` returning live statuses for these 8 rooms.
+
+Rebuild and execute this full interactive pipeline now. Ensure clicking the 3D meshes seamlessly updates the Arabic card text and images immediately.

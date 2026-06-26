@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "6a10a7I0smHS7EnBq_JzV"
+uri = "file://project.tar.gz"
+type = "unspecified"
+title = "GeoResTwin | FCAI-ZU — Full Project Source"
