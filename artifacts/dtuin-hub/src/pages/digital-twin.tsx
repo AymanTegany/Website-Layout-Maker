@@ -283,16 +283,16 @@ export default function DigitalTwin() {
           </div>
 
           {alertsEnabled && halls.filter(h => h.status === "alert").length > 0 && (
-            <div className="absolute top-16 left-1/2 -translate-x-1/2 z-30 w-11/12 max-w-lg bg-red-950/80 border border-red-500/50 backdrop-blur-md rounded-xl p-5 shadow-[0_0_40px_rgba(239,68,68,0.4)] pointer-events-none flex flex-col items-center justify-center animate-pulse" dir="rtl">
-              <div className="flex items-center gap-3 mb-2">
-                <AlertTriangle className="w-8 h-8 text-red-500 animate-bounce" />
-                <h2 className="text-xl font-bold text-red-400">حالة طوارئ!</h2>
-                <AlertTriangle className="w-8 h-8 text-red-500 animate-bounce" />
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 w-auto max-w-sm bg-red-950/80 border border-red-500/50 backdrop-blur-md rounded-lg p-3 shadow-[0_0_20px_rgba(239,68,68,0.3)] pointer-events-none flex flex-col items-center justify-center animate-pulse" dir="rtl">
+              <div className="flex items-center gap-2 mb-1.5">
+                <AlertTriangle className="w-5 h-5 text-red-500 animate-bounce" />
+                <h2 className="text-sm font-bold text-red-400">حالة طوارئ!</h2>
+                <AlertTriangle className="w-5 h-5 text-red-500 animate-bounce" />
               </div>
-              <p className="text-xs text-red-200 mb-3 text-center">يرجى الانتباه، القاعات التالية تجاوزت سعة الاستيعاب الآمنة:</p>
-              <div className="flex flex-wrap justify-center gap-2">
+              <p className="text-[10px] text-red-200 mb-2 text-center">القاعات المكتظة:</p>
+              <div className="flex flex-wrap justify-center gap-1.5">
                 {halls.filter(h => h.status === "alert").map(h => (
-                  <span key={h.id} className="bg-red-500/30 border border-red-500 text-red-100 px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                  <span key={h.id} className="bg-red-500/30 border border-red-500 text-red-100 px-2 py-0.5 rounded-full text-[10px] font-bold shadow-sm">
                     {h.nameAr} ({h.occupancyRate}%)
                   </span>
                 ))}
